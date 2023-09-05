@@ -24,24 +24,13 @@ stdenv.mkDerivation (finalAttrs: {
     dpkg-deb -x $curSrc source
   '';
 
-  runtimeDependencies = [
-    glib-networking
-    libappindicator
-    libayatana-appindicator
-  ];
-
   nativeBuildInputs = [
     dpkg
-    wrapGAppsHook
     autoPatchelfHook
   ];
 
   buildInputs = [
     webkitgtk
-    glib-networking
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-bad
   ];
 
   installPhase = ''
